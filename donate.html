@@ -1,0 +1,291 @@
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="Pet.png">
+      <style>
+        
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #966e9c;
+  font-family: Raleway;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.card-form {
+  width: 40em;
+  height: 30em;
+  border-radius: 10px;
+  background: 333c4a;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.card-form .form-indicator {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 0.5em;
+  font-size: 20px;
+  font-weight: bold;
+  background: #341439;
+  border-radius: 10px 10px 0 0;
+}
+.card-form .form-body {
+  padding: 10px;
+}
+.card-form .form-body .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10px;
+}
+
+.card-form .form-body .row input[type="text"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  margin: 0 15px;
+  height: 35px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #262c36;
+  color: #7c8086;
+  font-size: 14px;
+}
+.card-form .form-body .row .form-block .button {
+  
+  text-align:justify;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 14px;
+  background: #262c36;
+  margin: 10px;
+  font-size: 14px;
+  -webkit-transition: 400ms background-color;
+  -moz-transition: 800ms opacity, 800ms right;
+  -ms-transition: 800ms opacity, 800ms right;
+  -o-transition: 800ms opacity, 800ms right;
+  transition: 200ms background-color;
+}
+.card-form .form-body .row .form-block .button:hover {
+  background-color: #341439;
+}
+/* .card-form .form-body .row .form-block .button:visited {
+  background-color: #82d14b;
+} */
+.card-form .form-footer {
+  margin: 0 25px 15px 25px;
+  padding: 15px 10px;
+}
+
+.card-form .form-footer .btn {
+  text-align:center;
+  
+  display: inline-block;
+  height: 30px;
+  width:95%;
+  
+  line-height: 30px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 10px;
+  background: #341439;
+  margin: 5px;
+  font-size: 14px;
+    -webkit-transition: 400ms background-color;
+  -moz-transition: 800ms opacity, 800ms right;
+  -ms-transition: 800ms opacity, 800ms right;
+  -o-transition: 800ms opacity, 800ms right;
+  transition: 200ms background-color;
+}
+
+.card-form .form-footer .btn:hover{
+  background-color: #65366d;
+}
+
+
+      </style>
+     </head>
+     <body>
+      
+
+<div class="card-form">
+  <form class="deposit">
+    <div class="form-indicator"></div>
+    <div class="form-body">
+      <div class="row">
+        <h1 style="margin-bottom:0px;">Donate</h2>
+      </div> 
+     
+      <div class="row">
+        <div class="form-block">
+          <div class="button" id="1" onclick="setValue(this)">$5</div>
+          <div class="button" id="2" onclick="setValue(this)">$10</div>
+          <div class="button" id="3" onclick="setValue(this)">$20</div>
+          <div class="button" id="4" onclick="setValue(this)">$40</div>
+          <div class="button" id="5" onclick="setValue(this)">$100</div>
+          <div class="button" id="6" onclick="setValue(this)">$250</div>
+          <div class="button" id="7" onclick="setValue(this)">$1000</div>
+        </div>
+      </div>
+      <div class="row">
+        <input type="text" id="cc" maxlength="16" placeholder="Credit card number">
+      </div>
+      <div class="row">
+        <input type="text" id="name" placeholder="Name on card">
+        <input type="text" id ="date" maxlength="5" placeholder="MM/YY">
+        <input type="text" id ="cvc" maxlength="4" placeholder="CVC">
+      </div>
+    </div>
+    <div class="form-footer">
+      <div class="btn" onclick="validate(this)"><a href="thank.html" style="color: #fff; text-decoration: none  ;">Submit</a></button>
+    </div>
+  </form>
+</div>
+
+<script>
+  
+
+  let donations = 0;
+let selected = false;
+let selId = 0;
+//Onclick function to highlight selected donation amount
+function setValue(element){
+  let val = element;
+  if(!selected){
+    val.style.background = "#82d14b";
+    selId = val;
+    selected = true;
+  }else{
+    selId.style.background = "#262c36";
+    val.style.background = "#82d14b";
+    selId = val;
+  }
+}
+
+function validateCVC() {
+  const cvc = document.getElementById("cvc");
+  const cvcreg = /\d{3,4}/;
+  return matchExists(cvcreg, cvc.value);
+}
+
+function matchExists(regex, value){
+  let mat = value.match(regex);
+  const matchExists = mat != null;
+  return (matchExists && mat[0].length == value.length);
+}
+function validateCC(){
+  const cc = document.getElementById("cc");
+  const ccreg = /\d{16}/;
+  return matchExists(ccreg, cc.value);
+}
+function validateName(){
+  const name = document.getElementById("name");
+  const namereg = /[a-zA-Z]*\s?[a-zA-Z]*/;
+  return matchExists(namereg, name.value);
+}
+function validateDate(){
+  const date = document.getElementById("date");
+  const datereg = /(1[0-2]|0[1-9]|\d)\/(1[7-9]|[2-9]\d)/;
+  return matchExists(datereg, date.value);
+}
+function validate(){
+   const indicator = document.getElementsByClassName("form-indicator")[0];
+  const cvc = validateCVC();
+  const cc = validateCC();
+  const date = validateDate();
+  const name = validateName();
+  
+  const allAreValid = cvc && cc && date && name;
+  
+  if(allAreValid){
+    switch(Number(selId.id)) {
+    case 1:
+        donations+=5;
+        break;
+    case 2:
+        donations+=10;
+        break;
+    case 3:
+        donations+=20;
+        break;
+    case 4:
+        donations+=40;
+        break;
+    case 5:
+        donations+=100;
+        break;
+    case 6:
+        donations+=250;
+        break;
+    case 7:
+        donations+=1000;
+        break;
+    default:
+        break;
+                }
+    const donation = document.getElementById("donation");
+    donation.innerHTML = "";
+    donation.innerHTML = "$"+donations+" won in the last 24 hours";
+}else{
+  if(!cc){
+    const ccError = document.getElementById("cc");
+    ccError.style.color = "red";
+  }
+  if(!cvc){
+    const cvcError = document.getElementById("cvc");
+    cvcError.style.color = "red";
+  }
+  if(!date){
+    const dateError = document.getElementById("date");
+    dateError.style.color = "red";
+  }
+  if(!name){
+    const nameError = document.getElementById("name");
+    nameError.style.color = "red";
+  }
+}
+  //   donations += 
+  //   indicator.style.background ="blue";
+  // }else{
+  //   indicator.style.background ="red";
+  // }
+}
+
+
+</script>
+
+
+     </body>
+     </html>
+        
+

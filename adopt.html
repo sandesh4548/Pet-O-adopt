@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Adoption</title>
+    <link rel="icon" type="image/x-icon" href="Pet.png">
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 20px;
+        font-family: Arial;
+        background-color: #ffffff;
+        /* opacity: 0.7; */
+        background-image: radial-gradient(#341439 2px, transparent 2px),
+          radial-gradient(#341439 2px, #ffffff 2px);
+        background-size: 80px 80px;
+        background-position: 0 0, 40px 40px;
+      }
+
+      /* Center website */
+      .main {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      h1 {
+        font-size: 50px;
+        word-break: break-all;
+      }
+
+      .row {
+        margin: 8px -16px;
+      }
+
+      /* Add padding BETWEEN each column (if you want) */
+      .row,
+      .row > .column {
+        padding: 8px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 33.33%;
+        display: none; /* Hide columns by default */
+      }
+
+      /* Clear floats after rows */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Content */
+      .content {
+        background-color: white;
+        padding: 10px;
+      }
+
+      /* The "show" class is added to the filtered elements */
+      .show {
+        display: block;
+      }
+
+      /* Style the buttons */
+      .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      /* Add a grey background color on mouse-over */
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      /* Add a dark background color to the active button */
+      .btn.active {
+        background-color: #341439;
+        color: white;
+      }
+      button {
+        padding: 15px 40px;
+        border-radius: 10px;
+        border: none;
+        background-color: #341439;
+      }
+      button a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 1.6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button><a href="main.html">Go back</a></button>
+
+    <h2>Pets</h2>
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">
+        Show all
+      </button>
+      <button class="btn" onclick="filterSelection('nature')">Dog</button>
+      <button class="btn" onclick="filterSelection('cars')">Cats</button>
+      <button class="btn" onclick="filterSelection('people')">Rabbit</button>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="puppyy.jpg"
+            alt="Mountains"
+            style="width: 100%"
+          />
+          <h4>Dog 1</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
+            dolore provident. Aperiam laboriosam ullam sed sit dolores
+            necessitatibus dolor iure rerum. Quisquam voluptatibus inventore
+            corporis soluta, laudantium similique voluptates totam!
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="puppy.jpg"
+            alt="Lights"
+            style="width: 100%"
+          />
+          <h4>Dog 2</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+            cumque alias unde doloremque inventore praesentium repellendus
+            eligendi sed iusto maiores dolore, at vel tenetur. Iusto ipsum
+            commodi soluta voluptatum quo.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="maltese.jpg"
+            alt="Nature"
+            style="width: 100%"
+          />
+          <h4>Dog 3</h4>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            natus soluta aliquam. A placeat beatae consequuntur quos eius porro?
+            Tempora suscipit ex ut tenetur corrupti ab qui sed fuga perferendis.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+
+      <div class="column cars">
+        <div class="content">
+          <img src="cattt.jpg" alt="Car" style="width: 100%" />
+          <h4>cat 1</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore
+            doloremque excepturi quia natus maxime impedit dolore enim quam vel,
+            rem adipisci voluptas beatae. Vero repellendus veniam debitis quae
+            nihil. Ipsa.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="content">
+          <img src="catt.jpg" alt="Car" style="width: 100%" />
+          <h4>cat 2</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            odit dicta dolore expedita necessitatibus, magni ipsum iusto cumque
+            totam? At eligendi odit eaque vero esse nam aut sed sapiente
+            laboriosam.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="content">
+          <img src="cat.jpg" alt="Car" style="width: 100%" />
+          <h4>Cat 3</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            ex harum dolorum adipisci debitis officia architecto odit voluptates
+            suscipit, sint dignissimos veniam, fugit minus expedita odio
+            sapiente maiores totam. Sequi.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+
+      <div class="column people">
+        <div class="content">
+          <img
+            src="easter.jpg"
+            alt="People"
+            style="width: 100%"
+          />
+          <h4>Rabbit 1</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+            magni necessitatibus accusantium nam quidem eos harum at, excepturi
+            iusto quibusdam facere, dignissimos hic ipsam alias ea ab enim quos
+            corporis.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="content">
+          <img
+            src="bunny.jpg"
+            alt="People"
+            style="width: 100%"
+          />
+          <h4>Rabbit 2</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis
+            fugiat at quidem id! Harum vitae error, aut dolore iusto mollitia
+            enim possimus iste, aliquam aliquid quis odio quia in ea.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="content">
+          <img
+            src="rabbit.jpg"
+            alt="People"
+            style="width: 100%"
+          />
+          <h4>Rabbit 3</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            voluptas vero ullam unde quod harum eveniet ab porro illum saepe.
+            Sunt mollitia quas cumque dolorem fuga, voluptatum nam quasi eaque.
+          </p>
+          <button><a href="adopt2.html">Adopt</a></button>
+        </div>
+      </div>
+      <!-- END GRID -->
+    </div>
+
+    <script>
+      filterSelection("all"); // Execute the function and show all columns
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      // Show filtered elements
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      // Hide elements that are not selected
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+  </body>
+</html>

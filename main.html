@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="Pet.png">
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        /* font-family: 'Concert One', cursive; */
+        font-family: "Quicksand", sans-serif;
+      }
+      
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2a0a2f;
+        color: white;
+        /* padding: 5px; */
+        position: sticky;
+        top: 0;
+      }
+
+      img {
+        height: 60px;
+        margin: 12px 10px;
+      }
+
+      .logo a {
+        font-size: 1.5em;
+        text-decoration: none;
+        color: white;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        /* width: 40%; */
+      }
+
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.3em;
+        margin: 20px;
+        transition: all 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: rgb(183, 183, 183);
+      }
+
+      .burger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-links {
+          position: absolute;
+          right: 0px;
+          height: 35vh;
+          top: 8.5vh;
+          background-color: #29052d;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 30%;
+          transform: translateX(100%);
+          transition: transform 0.5s ease-in;
+          padding: 20px;
+        }
+
+        .nav-links li {
+          opacity: 0;
+        }
+
+        .burger {
+          display: block;
+        }
+      }
+
+      .nav-active {
+        transform: translateX(0%);
+      }
+
+      .nav-links li {
+        opacity: 1;
+        transition: opacity 0.5s ease-in;
+      }
+
+      .container {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-direction: column;
+        height: 92vh;
+        color: rgb(0, 0, 0);
+      }
+
+      .greet {
+        font-family: "Concert One", cursive;
+        font-size: 3rem;
+        margin-top: 160px;
+        /* padding: 14px;
+    border-radius: 10px;
+    background-color: #341439;
+    color: #fff; */
+      }
+
+      #greeting {
+        font-size: 5rem;
+        margin-top: 10px;
+        /* padding: 14px;
+    border-radius: 10px;
+    background-color: #341439;
+    color: #fff; */
+      }
+
+      #intro {
+        font-size: 1.5rem;
+        max-width: 1000px;
+        margin-top: 10px;
+        padding: 14px;
+        border-radius: 10px;
+        background-color: #341439;
+        color: #fff;
+        word-spacing: 3px;
+      }
+
+      .hero {
+        /* background-image: url("wow.jpg");
+    background-size: cover;
+    background-position: center; */
+        /* background-color: #3e1643; */
+        /* background-color: #ffffff;
+    /* opacity: 0.8; 
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 10px ), repeating-linear-gradient( #34143955, #341439 ); */
+
+        background-color: #ffffff;
+        /* opacity: 0.7; */
+        background-image: radial-gradient(#341439 2px, transparent 2px),
+          radial-gradient(#341439 2px, #ffffff 2px);
+        background-size: 80px 80px;
+        background-position: 0 0, 40px 40px;
+      }
+      .ano ul li {
+        text-align: center;
+        margin-top: 29px;
+      }
+      .ann {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        /* border-radius: 50px; */
+        background-color: #634269;
+        transition: 0.4s ease;
+        cursor: pointer;
+      }
+      .ann:hover {
+        background-color: #634269a7;
+      }
+      /* #prfl {
+    /* padding: 20px; 
+    height: 30px;
+    width: 30px;
+    border: solid;
+    border-radius: 50px;
+    background-color: crimson;
+} */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <p>Pet-O-adopt</p>
+      </div>
+
+      <div class="ano">
+        <ul class="nav-links">
+          <li  style="margin-top: 12px;"><a href="adopt.html">Adopt pets</a></li>
+          <li  style="margin-top: 12px;"><a href="donate.html">Donate</a></li>
+          <li  style="margin-top: 12px;"><a href="index.html">Log out</a></li>
+        </ul>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="oo">
+          <h1 class="greet">Welcome</h1>
+          <p id="greeting"></p>
+          <p id="intro">
+            Welcome to our pet adoption website, where you can find your perfect furry companion. We offer a wide range of lovable pets that are waiting for a forever home. Adopt today and make a difference in a pet's life!
+          </p>
+        </div>
+      </div>
+      <!-- <div class="down">
+        <p>Scroll down</p>
+      </div> -->
+    </section>
+
+    <script>
+      //navbar
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
+
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("nav-active");
+      });
+
+      // Get the name from the URL parameters
+      var urlParams = new URLSearchParams(window.location.search);
+      var name = urlParams.get("name");
+
+      // Check if the name is null or an empty string
+      if (name == null || name === "") {
+        console.error("Name parameter missing or invalid");
+        name = "Unknown";
+      }
+
+      // Display the greeting with the user's name
+      var greeting = document.getElementById("greeting");
+      greeting.textContent = "" + name + "!";
+    </script>
+  </body>
+</html>
